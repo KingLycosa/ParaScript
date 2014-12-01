@@ -21,7 +21,8 @@ public class IkovAgility extends Script implements Paintable {
 	
 	@Override
 	public boolean onExecute() {
-		strat.add(new Agility());
+		strat.add(new Move());
+		strat.add(new Swing());
 		provide(strat);
 		return true;
 	}
