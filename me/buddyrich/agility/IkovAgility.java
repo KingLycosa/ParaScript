@@ -14,7 +14,7 @@ import org.rev317.min.api.methods.Skill;
 
 
 
-@ScriptManifest(author = "buddyrich", category = Category.AGILITY, description = "Trains agility at the wilderness ropeswing for awesome xp/h", name = "buddyAgility", servers= { "Ikov" }, version = 1)
+@ScriptManifest(author = "buddyrich", category = Category.AGILITY, description = "Trains agility at the wilderness ropeswing for awesome xp/h", name = "buddyAgility", servers= { "Ikov" }, version = 1.1)
 public class IkovAgility extends Script implements Paintable {
 	
 	private final ArrayList<Strategy> strat = new ArrayList<Strategy>();
