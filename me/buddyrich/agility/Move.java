@@ -10,21 +10,39 @@ public class Move implements Strategy {
 	
 	
 	@Override
-	public boolean activate() {
-		SceneObject[] swing = SceneObjects.getNearest(2283);
-		if(swing[0].distanceTo() > 3){
-			return true;
-			}
-		return false;
-	}
+    public boolean activate() {
+        SceneObject swing = getSwing();
+        //Check if the Object Exist.
+        if(swing != null) {
+            if (swing.distanceTo() > 3) {
+                return true;
+            }
+        }
+        return false;
+    }
 
-	@Override
-	public void execute() {
-		SceneObject[] swing = SceneObjects.getNearest(2283);
-		
-		if(swing[0].distanceTo() > 3) {
-		swing[0].getLocation().walkTo();
-		Time.sleep(500);
-		}	
-	}
+    @Override
+    public void execute() {
+        SceneObject swing = getSwing();
+
+        if(swing != null) {
+            if (swing.distanceTo() > 3) {
+                swing.getLocation().walkTo();
+                Time.sleep(500);
+            }
+        }
+    }
+
+    /**
+     * Gets the SceneObject
+     * @return The SceneObject.
+     */
+    private SceneObject getSwing(){
+        for(SceneObject swing : SceneObjects.getNearest(2283)){
+            if(swing != null){
+                return swing;
+            }
+        }
+        return null;
+    }
 }
